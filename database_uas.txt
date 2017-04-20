@@ -1,0 +1,60 @@
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\Users\Dimas>cd
+
+C:\Users\Dimas>cd C:\xampp\mysql\bin
+
+C:\xampp\mysql\bin>mysql -u root
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 98
+Server version: 5.1.37 Source distribution
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use anggota;
+Database changed
+mysql> desc login;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| Username | varchar(20) | NO   | PRI |         |       |
+| password | varchar(20) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+2 rows in set (0.47 sec)
+
+mysql> desc tbl_anggota;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| id_anggota | int(10)     | NO   | PRI | 0       |       |
+| Nama       | varchar(50) | YES  |     | NULL    |       |
+| Alamat     | varchar(50) | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+mysql> desc tbl_buku;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| id_buku   | int(10)     | NO   | PRI | 0       |       |
+| judul     | varchar(50) | YES  |     | NULL    |       |
+| penulis   | varchar(50) | YES  |     | NULL    |       |
+| pengarang | varchar(50) | YES  |     | NULL    |       |
+| penerbit  | varchar(50) | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+5 rows in set (0.10 sec)
+
+mysql> desc tbl_pinjam;
++-------------+---------+------+-----+---------+-------+
+| Field       | Type    | Null | Key | Default | Extra |
++-------------+---------+------+-----+---------+-------+
+| id_anggota  | int(10) | NO   | PRI | 0       |       |
+| id_buku     | int(10) | NO   | PRI | 0       |       |
+| tgl_pinjam  | date    | YES  |     | NULL    |       |
+| tgl_kembali | date    | YES  |     | NULL    |       |
+| denda       | char(5) | YES  |     | NULL    |       |
++-------------+---------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+mysql>
